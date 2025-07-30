@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+telethon
+aiohttp
+asyncio
+uvloop
+python-dateutil
