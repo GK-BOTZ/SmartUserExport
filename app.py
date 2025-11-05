@@ -17,6 +17,8 @@ from uuid import uuid4
 import aiohttp
 from datetime import datetime
 
+from config import Config
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -438,8 +440,8 @@ async def get_bot_data_fast(
         logger.info(f"Processing request for token: {token[:10]}...")
         client = await client_manager.get_client(
             bot_token=token.strip(),
-            api_id=YOUR_API_ID,
-            api_hash="YOUR_API_HASH"
+            api_id=Config.API_ID,
+            api_hash=Config.API_HASH,
         )
         try:
             bot_info_task = asyncio.create_task(
